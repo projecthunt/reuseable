@@ -6,6 +6,9 @@
 	<a href="LICENSE">
 		<img src="https://img.shields.io/badge/License-MIT-yellow.svg">
 	</a>
+	<a href="https://pkg.go.dev/github.com/projecthunt/reuseable">
+		<img src="https://pkg.go.dev/badge/github.com/projecthunt/reuseable.svg" alt="Go Reference">
+	</a>
 	<a href="https://goreportcard.com/report/github.com/projecthunt/reuseable">
 		<img src="https://goreportcard.com/badge/github.com/projecthunt/reuseable" >
 	</a>
