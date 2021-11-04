@@ -6,6 +6,9 @@
 	<a href="LICENSE">
 		<img src="https://img.shields.io/badge/License-MIT-yellow.svg">
 	</a>
+	<a href="https://goreportcard.com/report/github.com/projecthunt/reuseable">
+		<img src="https://goreportcard.com/badge/github.com/projecthunt/reuseable" >
+	</a>
 <p>
 
 This library helps go developers to open sockets with SO_REUSEPORT and SO_REUSEADDR flags.
