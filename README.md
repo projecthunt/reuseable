@@ -32,8 +32,6 @@ package main
 
 import (
 	"log"
-	"strings"
-
 	"github.com/projecthunt/reuseable"
 )
 
