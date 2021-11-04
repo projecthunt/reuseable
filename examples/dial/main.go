@@ -13,7 +13,7 @@ func main() {
 		log.Fatalf("unable to start listener 1: %v", err)
 	}
 
-	// Listen on same port number
+	// Listen different port number
 	l2, err := reuseable.Listen("tcp", "127.0.0.1:0")
 	if err != nil {
 		log.Fatalf("unable to start listener 2: %v", err)
