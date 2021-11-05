@@ -12,7 +12,9 @@
 	<a href="https://goreportcard.com/report/github.com/projecthunt/reuseable">
 		<img src="https://goreportcard.com/badge/github.com/projecthunt/reuseable" >
 	</a>
-	<a href='https://coveralls.io/github/projecthunt/reuseable?branch=master'><img src='https://coveralls.io/repos/github/projecthunt/reuseable/badge.svg?branch=master' alt='Coverage Status' /></a>
+	<a href='https://coveralls.io/github/projecthunt/reuseable?branch=master'>
+		<img src='https://coveralls.io/repos/github/projecthunt/reuseable/badge.svg?branch=master' alt='Coverage Status' />
+	</a>
 <p>
 
 This library helps go developers to open sockets with SO_REUSEPORT and SO_REUSEADDR flags.
