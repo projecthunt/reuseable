@@ -12,6 +12,12 @@
 	<a href="https://goreportcard.com/report/github.com/projecthunt/reuseable">
 		<img src="https://goreportcard.com/badge/github.com/projecthunt/reuseable" >
 	</a>
+	<a href="https://github.com/projecthunt/reuseable/actions/workflows/test-master.yml">
+		<img src="https://github.com/projecthunt/reuseable/actions/workflows/test-master.yml/badge.svg">
+	</a>
+	<a href="https://github.com/projecthunt/reuseable/actions/workflows/build.yml">
+		<img src="https://github.com/projecthunt/reuseable/actions/workflows/build.yml/badge.svg">
+	</a>
 	<a href='https://coveralls.io/github/projecthunt/reuseable?branch=master'>
 		<img src='https://coveralls.io/repos/github/projecthunt/reuseable/badge.svg?branch=master' alt='Coverage Status' />
 	</a>
