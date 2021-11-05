@@ -1,0 +1,52 @@
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
+
+      - name: Cache Go modules
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Print Go version
+        run: go version
+
+      - name: Verify Go modules
+        run: go mod tidy && git status && git --no-pager diff && git diff-index --quiet HEAD --
+      
+      - name: Verify source code formatting
+        run: go fmt ./... && git status && git --no-pager diff && git diff-index --quiet HEAD --
+
+      - name: Test
+        run: go test -coverprofile=c.out ./...
+        
+      - name: Install goveralls
+        run: go install github.com/mattn/goveralls@latest
+      
+      - name: Create coverage report
+        run: go tool cover -func=c.out
+
+      - name: Send coverage report
+        env:
+            COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+        run: goveralls -coverprofile=c.out -service=github
