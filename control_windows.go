@@ -1,13 +1,22 @@
-//go:build !linux && !windows
+//go:build windows
 
 package reuseable
 
 import (
+    "golang.org/x/sys/windows"
     "syscall"
 )
 
 func rawControl(rawConn syscall.RawConn) error {
-    return nil
+    var err error
+    // See syscall.RawConn.Control
+    rawConn.Control(func(fd uintptr) {
+        err = windows.SetsockoptInt(windows.Handle(fd), windows.SOL_SOCKET, windows.SO_REUSEADDR, 1)
+        if err != nil {
+            return
+        }
+    })
+    return err
 }
 
 // See net.ListenConfig and net.Dialer's Control attribute
